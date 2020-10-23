@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"references/#References","page":"References","title":"References","text":"","category":"section"},{"location":"references/","page":"References","title":"References","text":"","category":"page"},{"location":"#DocumenterBibliographyTest.jl-documentation","page":"Home","title":"DocumenterBibliographyTest.jl documentation","text":"","category":"section"},{"location":"","page":"Home","title":"Home","text":"Hi!","category":"page"},{"location":"","page":"Home","title":"Home","text":"In this page I will cite an article Kenneth J. Arrow , Leonid Hurwicz , Hirofumi Uzawa  (1961) and a book Charalambos D. Aliprantis , Kim C. Border  (1994).","category":"page"}]
+}
