@@ -27,10 +27,10 @@ makedocs(bib, ...)
 
 ## How to get a sorted References list
 
-In order to get a sorted references list you can pass a additional argument to `CitationBibliography()`.
+In order to get a sorted references list you can pass a additional `sorting` argument to `CitationBibliography()`.
 
 ```julia
-bib = CitationBibliography("some_references.bib",:nyt)
+bib = CitationBibliography("some_references.bib", sorting = :nyt)
 ```
 
 The currently supported sorting orders and their behaviours are managed by [`Bibliography.sorting_rules`](https://humans-of-julia.github.io/Bibliography.jl/stable/#Bibliography.sorting_rules).

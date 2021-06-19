@@ -1,7 +1,7 @@
 using Documenter
 using DocumenterCitations
 
-bib = CitationBibliography(joinpath(@__DIR__, "example.bib"),:nyt)
+bib = CitationBibliography(joinpath(@__DIR__, "example.bib"), sorting = :nyt)
 
 makedocs(
     bib,
