@@ -33,7 +33,9 @@ end
 
 Foo.
 
-[Mayer2012](@cite)
+# Reference
+
+* [Mayer, Krechetnikov, Phys. Rev. E 85, 046117 (2012)](@cite Mayer2012)
 """
 struct Example end
 

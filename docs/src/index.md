@@ -43,6 +43,8 @@ Here I cite `Mayer2012`, a useful article, via `[Mayer2012](@cite)`: [Mayer2012]
 
 I also cite `useful_proof`, a book you might not want to read, with `[useful_proof](@cite)` [useful_proof](@cite).
 
+Use e.g. `[arbitrary text](@cite Mayer2012)` to cite a reference with an [arbitrary text](@cite Mayer2012).
+
 Some TeX diacritical marks are supported, e.g. [Heun1900](@cite).
 
 Clicking on the citations takes you to the bibliography.
