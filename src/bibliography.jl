@@ -15,6 +15,9 @@ const tex2unicode_replacements = (
     "---" => "—", # em dash needs to go first
     "--"  => "–",
 
+    # do this before tex2unicode_chars or it wont be recognized
+    r"\\\\\"\{\\i\}" => s"\u0069\u308", # \"{\i} 	ï 	Latin Small Letter I with Diaeresis
+
     # replace quoted single letters before the remaining replacements, and do
     # them all at once, as these patterns rely on word boundaries which can
     # change due to the replacements we perform
@@ -39,9 +42,6 @@ const tex2unicode_replacements = (
     r"\{\}" => s"",  # empty curly braces should not have any effect
     r"\{([[:alnum:]]+)\}" => s"\1",  # {<text>} 	<text> 	bracket stripping after applying all rules
 
-    # TODO:
-    # \"{\i} 	ï 	Latin Small Letter I with Diaeresis
-
     # Sources : https://www.compart.com/en/unicode/U+0131 enter the unicode character into the search box
 )
 
@@ -56,7 +56,7 @@ linkify(text, link) = isempty(link) ? text : "<a href='$link'>$text</a>"
 
 function Selectors.runner(::Type{BibliographyBlock}, x, page, doc)
     @info "Expanding bibliography."
-    raw_bib = "<dl>"
+    raw_bib = """<div class="citation"><dl>"""
     for (id, entry) in doc.plugins[CitationBibliography].bib
         @info "Expanding bibliography entry: $id."
 
@@ -73,7 +73,7 @@ function Selectors.runner(::Type{BibliographyBlock}, x, page, doc)
           <div id="$id">$authors, $(linkify(title, link)), $published_in</div>
         </dd>"""
     end
-    raw_bib *= "\n</dl>"
+    raw_bib *= "\n</dl></div>"
 
     page.mapping[x] = Documents.RawNode(:html, raw_bib)
 end

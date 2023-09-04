@@ -14,6 +14,10 @@ using Test
     @test DocumenterCitations.tex2unicode(
         raw"{\o}verline") == "øverline"
     @test DocumenterCitations.tex2unicode(
+        raw"\t{oo}\\\"{\i}{abcdefg}") == "o͡oïabcdefg"
+    @test_skip DocumenterCitations.tex2unicode(
+        raw"{abcd\~{o}efg}") == "abcdõefg"
+    @test DocumenterCitations.tex2unicode(
         raw"\overline") == "\\overline"
 end
 
